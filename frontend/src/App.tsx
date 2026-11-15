@@ -1,6 +1,6 @@
 import { type FunctionComponent, useCallback, useEffect, useRef, useState } from 'react';
-import { BryntumGantt, type BryntumGanttProps } from '@bryntum/gantt-react';
-import { DateHelper } from '@bryntum/gantt';
+import { BryntumGantt, type BryntumGanttProps } from '@bryntum/gantt-react-enterprise';
+import { DateHelper } from '@bryntum/core-enterprise';
 import CustomTaskModel from './lib/CustomTaskModel';
 import AssigneeBadge from './AssigneeBadge';
 import AssigneeToggle from './AssigneeToggle';

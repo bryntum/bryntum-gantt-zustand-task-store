@@ -30,7 +30,7 @@ Install the dependencies using the following command:
 npm install
 ```
 
-⚠️ You need a Bryntum licence to install the Bryntum Gantt dependency. If you don't have one, install the [trial package](https://bryntum.com/products/gantt/docs/guide/Gantt/integration/javascript/multiple-products).
+Bryntum packages are on the public npm registry, so you don't need to log in. The Enterprise tier runs as a fully functional trial for 14 days without a license key. [Request a free trial key](https://bryntum.com/download/) to extend the trial to 45 days. If you have a Bryntum license, add your license key as described in the [licensing guide](https://bryntum.com/docs/guide/Core/licensing).
 
 Run the local development server:
 
