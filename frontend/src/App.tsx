@@ -1,6 +1,6 @@
 import { type FunctionComponent, useCallback, useEffect, useRef, useState } from 'react';
-import { BryntumGantt, type BryntumGanttProps } from '@bryntum/gantt-react';
-import { DateHelper } from '@bryntum/gantt';
+import { BryntumGantt, type BryntumGanttProps } from '@bryntum/gantt-react-enterprise';
+import { DateHelper } from '@bryntum/core-enterprise';
 import CustomTaskModel from './lib/CustomTaskModel';
 import AssigneeBadge from './AssigneeBadge';
 import AssigneeToggle from './AssigneeToggle';
@@ -22,16 +22,18 @@ const GanttView: FunctionComponent = () => {
 
     const handleDataChange = useCallback(
         (event: {
-      store: { id: string };
+      store: { id: string | number };
       action: string;
-      records: { id: number | string; data: Record<string, unknown> }[];
+      records: unknown[];
       isExpand?: boolean;
       isCollapse?: boolean;
     }) => {
             if (event.store.id !== 'tasks') return;
             if (event.isExpand || event.isCollapse) return;
 
-            const { action, records } = event;
+            const { action } = event;
+            // Bryntum's Model type does not declare data, so describe the records here
+            const records = event.records as { id: number | string; data: Record<string, unknown> }[];
 
             const toBackendParentId = (value: unknown): number | null =>
                 typeof value === 'number' ? value : null;

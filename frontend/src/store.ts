@@ -31,7 +31,7 @@ interface AppStore {
   removeTask: (id: number) => Promise<void>;
 }
 
-export const useAppStore = create<AppStore>((set, get) => ({
+export const useAppStore = create<AppStore>((set) => ({
     // UI state
     selectedMembers : [],
     toggleMember    : (name) =>

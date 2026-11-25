@@ -1,4 +1,4 @@
-import { TaskModel } from '@bryntum/gantt';
+import { TaskModel } from '@bryntum/gantt-enterprise';
 
 export default class CustomTaskModel extends TaskModel {
     static $name = 'CustomTaskModel';
